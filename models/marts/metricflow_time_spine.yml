@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: metricflow_time_spine
+    description: Date spine for MetricFlow time-based metrics
+    config:
+      materialized: table
+
+    time_spine:
+      time_dimension_name: date_day
+      grain: day
+      count: 3650 # Approximating 10 years (365*10) as in SQL file
+      start_date: 2000-01-01
