@@ -5,16 +5,14 @@ version: "3.0.0"
 require-dbt-version: ">=1.5.0"
 
 dbt-cloud:
-  project-id: 275557 # Put your project id here
+  project-id: 35253091576722 # Put your project id here
 
 profile: default # Put your profile here
 
 model-paths: ["models"]
-analysis-paths: ["analyses"]
 test-paths: ["data-tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
-snapshot-paths: ["snapshots"]
 
 target-path: "target"
 clean-targets:
@@ -24,9 +22,9 @@ clean-targets:
 vars:
   "dbt_date:time_zone": "America/Los_Angeles"
 
-seeds:
-  jaffle_shop:
-    +schema: raw
+# Adding flags section to address behavior change warnings
+flags:
+  require_yaml_configuration_for_mf_time_spines: true
 
 models:
   jaffle_shop:
@@ -34,3 +32,7 @@ models:
       +materialized: view
     marts:
       +materialized: table
+
+seeds:
+  jaffle_shop:
+    +schema: raw
