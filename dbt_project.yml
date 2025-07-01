@@ -26,8 +26,15 @@ vars:
 flags:
   require_yaml_configuration_for_mf_time_spines: true
 
+# Improve compilation performance
+quoting:
+  database: false
+  schema: false
+  identifier: false
+
 models:
   jaffle_shop:
+    +materialized: table
     staging:
       +materialized: view
     marts:
