@@ -13,8 +13,6 @@ model-paths: ["models"]
 test-paths: ["data-tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
-
-target-path: "target"
 clean-targets:
   - "target"
   - "dbt_packages"
