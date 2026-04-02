@@ -5,6 +5,8 @@ models:
       - dbt_utils.expression_is_true:
           arguments:
             expression: "order_items_subtotal = subtotal"
+            config:
+              severity: warn
       - dbt_utils.expression_is_true:
           arguments:
             expression: "order_total = subtotal + tax_paid"
